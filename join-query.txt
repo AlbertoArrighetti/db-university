@@ -39,27 +39,13 @@ INNER JOIN `teachers` ON course_teacher.teacher_id = teachers.id;
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
-SELECT teachers.*, departments.name AS 'department_name'
+SELECT DISTINCT teachers.*, departments.name AS 'department_name'
 FROM `departments`
 INNER JOIN `degrees` ON department_id = departments.id
 INNER JOIN `courses` ON degrees.id = degree_id
 INNER JOIN `course_teacher` ON courses.id = course_teacher.course_id
 INNER JOIN `teachers` ON course_teacher.teacher_id = teachers.id
-
 WHERE departments.id = 5;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
